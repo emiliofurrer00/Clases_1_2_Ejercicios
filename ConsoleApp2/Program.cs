@@ -35,6 +35,18 @@ namespace Soluciones {
                     case "1":
                         Ejercicio1.Solucion();
                         break;
+                    case "2":
+                        Ejercicio2.Solucion();
+                        break;
+                    case "3":
+                        Ejercicio3.Solucion();
+                        break;
+                    case "4":
+                        Ejercicio4.Solucion();
+                        break;
+                    case "5":
+                        Ejercicio5.Solucion();
+                        break;
                     case "6":
                         Ejercicio6.Solucion();
                         break;
@@ -44,6 +56,20 @@ namespace Soluciones {
                 }
             } while (true);
       
+        }
+        //Viendo que tuve que reutilizar muchas veces la validación de un input y su conversión a int, lo separé en un metodo individual
+        public static int ValidarIntInput(){
+            bool success; int value;
+            do
+            {
+                success = int.TryParse(Console.ReadLine(), out value);
+                if (!success)
+                {
+                    Console.Clear();
+                    Console.WriteLine("Input invalido. Volver a intentar.");
+                }
+            } while (!success);
+            return value;
         }
     }
 }
